@@ -1,0 +1,16 @@
+#!/bin/bash
+
+. ~/.fehbg 2>> ~/.err.log
+. ~/.xinput 2>> ~/.err.log
+numlockx on 2>> ~/.err.log
+. ~/suckless/dstatus/statusbar.sh 2>> ~/.err.log &
+compton -D 3 -b
+dunst &
+
+xset +fp ~/.fonts
+xset fp rehash #? enables unicode
+
+while true
+do
+  /usr/local/bin/dwm 2> ~/.dwm.log
+done
